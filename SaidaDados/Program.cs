@@ -10,15 +10,15 @@ namespace SaidaDados {
             string z = "Maria";
             char w = 'F';
 
-            Console.Write("Olá mundo!");
-            Console.WriteLine("Bom dia!");
+            Console.Write("Olá mundo!"); // nao pula linha, print
+            Console.WriteLine("Bom dia!"); // pula linha, println
             Console.WriteLine("Até mais.");
 
             Console.WriteLine();
             Console.WriteLine(x);
-            Console.WriteLine(x.ToString("F2"));
+            Console.WriteLine(x.ToString("F2")); // limita as casas decimais MAS converte pra string
             Console.WriteLine(x.ToString("F4"));
-            Console.WriteLine(x.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine(x.ToString("F2", CultureInfo.InvariantCulture)); // utiliza um . e nao uma ,
 
             Console.WriteLine();
             Console.WriteLine("RESULTADO = " + x);
