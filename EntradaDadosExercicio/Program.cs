@@ -1,22 +1,30 @@
 ﻿using System;
+using System.Globalization;
 
-namespace EntradaDadosExercicio{
-    class Program{
-        static void Main(string[] args) {
+namespace EntradaDadosExercicio
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
 
-            Console.WriteLine("Escreva seu nome completo");
-            string[] nome = Console.ReadLine().Split(' ');
-            Console.WriteLine("Quantos quartos tem sua casa?");
-            int numQuartos = Console.Read();
-            Console.WriteLine("Escreva o preco de um produto:");
-            double precoProduto = Console.Read();
-            Console.WriteLine("Escreva seu ultimo nome, idade e altura, na mesma linha:");
-            string[] nomeAlturaIdade = Console.ReadLine().Split(' ');
-
-            Console.WriteLine(nome[0] + " " + nome[1]);
-            Console.WriteLine(numQuartos);
-            Console.WriteLine(precoProduto);
-            Console.WriteLine(nomeAlturaIdade[0] + " " + nomeAlturaIdade[1] + " " + nomeAlturaIdade[2]);
+            Console.WriteLine("Entre com seu nome completo:");
+            string fullName = Console.ReadLine();
+            Console.WriteLine("Quantos quartos tem na sua casa?");
+            int bedrooms = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter product price:");
+            double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("Entre seu último nome, idade e altura (mesma linha):");
+            string[] vect = Console.ReadLine().Split(' ');
+            string lastName = vect[0];
+            int age = int.Parse(vect[1]);
+            double height = double.Parse(vect[2], CultureInfo.InvariantCulture);
+            Console.WriteLine(fullName);
+            Console.WriteLine(bedrooms);
+            Console.WriteLine(price.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine(lastName);
+            Console.WriteLine(age);
+            Console.WriteLine(height.ToString("F2", CultureInfo.InvariantCulture));
         }
     }
 }
